@@ -1,0 +1,31 @@
+! White background/black foreground (default)
+*wkForegroundColor : (/0.,0.,0./)
+*wkBackgroundColor : (/1.,1.,1./)
+
+! Default colormap
+*wkColorMap : MPL_viridis
+
+! Font (default)
+*Font : helvetica 
+
+! Function code (default) 
+*TextFuncCode : ~     
+ 
+! Make default X11 window larger (the default is 1000x1000)
+*windowWorkstationClass*wkWidth  : 1024
+*windowWorkstationClass*wkHeight : 1024
+
+! Make default PNG window larger (the default is 1024x1024)
+*imageWorkstationClass*wkWidth   : 2048
+*imageWorkstationClass*wkHeight  : 2048
+
+! Note, if you just set wkWidth/wkHeight, this will affect both
+! X11 window AND PNG image size
+!*wkWidth   : 1500
+!*wkHeight  : 1500
+
+! Increase the default (16mb) contour memory.
+! The default is 100000000.
+! For example, if you have gridded data that
+! is larger than 500 x 500, you may need this.
+!*wsMaximumSize: 300000000
