@@ -14,14 +14,20 @@ export DISPLAY=localhost:0
 export PATH=/usr/local/bin:$PATH
 
 # virtualenvwrapper for python
-export WORKON_HOME=~/Envs
-export PROJECT_HOME=~/Envs
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-source /usr/local/bin/virtualenvwrapper.sh
+if [ -f "/usr/local/bin/virtualenvwrapper.sh" ]; then
+  export WORKON_HOME=~/Envs
+  export PROJECT_HOME=~/Envs
+  export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+  source /usr/local/bin/virtualenvwrapper.sh
+fi
 
 # miniconda path
-export PATH=/Users/alexanderzhang/miniconda2/bin:"$PATH"
+if [ -d "~/miniconda2/bin" ]; then
+  export PATH=~/miniconda2/bin:"$PATH"
+fi
 
 # NCL environment variables
-export NCARG_ROOT=/Users/alexanderzhang/miniconda2/bin/ncl
-export PATH=$NCARG_ROOT/bin:"$PATH"
+if [ -d "~/miniconda2/bin/ncl" ] then
+  export NCARG_ROOT=~/miniconda2/bin/ncl
+  export PATH=$NCARG_ROOT/bin:"$PATH"
+fi
