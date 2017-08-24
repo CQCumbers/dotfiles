@@ -1,0 +1,21 @@
+# Color output (auto set to 'no' on dumb terminals).
+zstyle ':prezto:*:*' color 'yes'
+
+# Set the Prezto modules to load (browse modules).
+# The order matters.
+zstyle ':prezto:load' pmodule \
+  'environment' \
+  'terminal' \
+  'editor' \
+  'history' \
+  'directory' \
+  'spectrum' \
+  'utility' \
+  'completion' \
+  'prompt'
+
+# Editor
+zstyle ':prezto:module:editor' key-bindings 'vi'
+
+# Prompt
+zstyle ':prezto:module:prompt' theme 'steeef'
