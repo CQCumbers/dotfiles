@@ -27,7 +27,8 @@ if [ -d "~/miniconda2/bin" ]; then
 fi
 
 # NCL environment variables
-if [ -d "~/miniconda2/bin/ncl" ] then
+if [ -d "~/miniconda2/bin/ncl" ]; then
   export NCARG_ROOT=~/miniconda2/bin/ncl
   export PATH=$NCARG_ROOT/bin:"$PATH"
 fi
+
