@@ -14,4 +14,5 @@ For personal use on macos; based on zsh, tmux, and vim
 - clone this repo, and `stow zsh` to symlink zsh dotfiles
 - `stow vim` for vim & tmux dotfiles; stow others as necessary
 - on mac, use included custom color scheme materialshell-ocean and Input Mono font
+- reinstall vim plugins by running :PlugClean, then :PlugUpdate
 
