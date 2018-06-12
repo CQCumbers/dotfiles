@@ -14,3 +14,4 @@ For personal use on macos, uses zsh/tmux/vim
 - clone this repo, and `stow zsh` to symlink zsh dotfiles
 - `stow vim` for vim & tmux dotfiles; stow others as necessary
 - Configure terminal to use the [materialshell-ocean](https://github.com/carloscuesta/materialshell) color scheme and [Input Mono](http://input.fontbureau.com/) font
+- reinstall vim plugins by running :PlugClean, then :PlugUpdate
