@@ -1,0 +1,12 @@
+[submodule "vim/.vim/plugged/goyo.vim"]
+	path = vim/.vim/plugged/goyo.vim
+	url = https://github.com/junegunn/goyo.vim.git
+[submodule "vim/.vim/plugged/vim-commentary"]
+	path = vim/.vim/plugged/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
+[submodule "vim/.vim/plugged/vim-sorround"]
+	path = vim/.vim/plugged/vim-sorround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "vim/.vim/plugged/vim-surround"]
+	path = vim/.vim/plugged/vim-surround
+	url = https://github.com/tpope/vim-surround.git

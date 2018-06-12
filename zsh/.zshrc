@@ -1,9 +1,13 @@
-# source prezto
+#
+# Executes commands at the start of an interactive session.
+#
+
+# Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# common aliases
+# Set common aliases.
 alias l='ls -lFh'     #size,show type,human readable
 alias la='ls -lAFh'   #long list,show almost all,show type,human readable
 alias lr='ls -tRFh'   #sorted by date,recursive,show type,human readable
@@ -19,5 +23,9 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 
-# Make zsh know about hosts already accessed by SSH
+if [[ -d "$HOME/.dokku" ]]; then
+  alias dokku='bash $HOME/.dokku/contrib/dokku_client.sh'
+fi
+
+# Make zsh know about hosts already accessed by SSH.
 zstyle -e ':completion:*:(ssh|scp|sftp|rsh|rsync):hosts' hosts 'reply=(${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) /dev/null)"}%%[# ]*}//,/ })'

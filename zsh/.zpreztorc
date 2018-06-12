@@ -1,5 +1,18 @@
+#
+# Sets Prezto options.
+#
+
+# Set the key mapping style to 'emacs' or 'vi'.
+zstyle ':prezto:module:editor' key-bindings 'vi'
+
+# Set case-sensitivity for completion, history lookup, etc.
+zstyle ':prezto:*:*' case-sensitive 'no'
+
 # Color output (auto set to 'no' on dumb terminals).
 zstyle ':prezto:*:*' color 'yes'
+
+# Auto set the tab and window titles.
+zstyle ':prezto:module:terminal' auto-title 'yes'
 
 # Set the Prezto modules to load (browse modules).
 # The order matters.
@@ -14,8 +27,5 @@ zstyle ':prezto:load' pmodule \
   'completion' \
   'prompt'
 
-# Editor
-zstyle ':prezto:module:editor' key-bindings 'vi'
-
-# Prompt
+# Set the prompt theme to load.
 zstyle ':prezto:module:prompt' theme 'steeef'

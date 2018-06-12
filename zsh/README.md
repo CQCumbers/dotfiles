@@ -69,9 +69,7 @@ displaying messages and the deletion of files.
 Authors
 -------
 
-*The authors of these files should be contacted via the [issue tracker][4].*
-
-  - [Sorin Ionescu](https://github.com/sorin-ionescu)
+These dotfiles are based on those of [Sorin Ionescu](https://github.com/sorin-ionescu), author of Prezto.
 
 [1]: http://www.kornshell.com
 [2]: http://en.wikipedia.org/wiki/Fortune_(Unix)

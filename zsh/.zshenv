@@ -2,38 +2,56 @@
 # Defines environment variables.
 #
 
-# Ensure that a non-login, non-interactive shell has a defined environment.
-if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprofile"
+# Ensure path arrays do not contain duplicates.
+typeset -gU cdpath fpath mailpath path
+typeset -gUT INFOPATH infopath
+
+# Set the list of directories that zsh searches for programs.
+path=(/usr/local/{bin,sbin} "$path[@]")
+
+# Set browser.
+if [[ "$OSTYPE" == darwin* ]]; then
+  export BROWSER='open'
 fi
 
-# display environment variable
-export DISPLAY=localhost:0
+# Set editors.
+export EDITOR='vim'
+export VISUAL='vim'
+export PAGER='less'
 
-# gcc path
-export PATH=/usr/local/bin:$PATH
-
-# virtualenvwrapper for python
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-  export WORKON_HOME=~/Envs
-  export PROJECT_HOME=~/Envs
-  export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-  source /usr/local/bin/virtualenvwrapper.sh
+# Set language.
+if [[ -z "$LANG" ]]; then
+  export LANG='en_US.UTF-8'
 fi
 
-# miniconda path
-if [ -d ~/miniconda2/bin ]; then
-  export PATH=~/miniconda2/bin:"$PATH"
+# Configure display variable.
+export DISPLAY='localhost:0'
+
+# Set default less options.
+# Mouse-wheel scrolling has been disabled by -X (disable screen clearing).
+# Remove -X and -F (exit if the content fits on one screen) to enable it.
+export LESS='-F -g -i -M -R -S -w -X -z-4'
+
+# Set less input preprocessor.
+if (( $+commands[lesspipe.sh] )); then
+  export LESSOPEN='| /usr/bin/env lesspipe.sh %s 2>&-'
 fi
 
-# anaconda path
-if [ -d ~/anaconda/bin ]; then
-    export PATH=~/anaconda/bin:"$PATH"
+# Configure virtualenvwrapper for Python.
+if [[ -f /usr/local/bin/virtualenvwrapper.sh ]]; then
+  export WORKON_HOME="$HOME/Envs"
+  export PROJECT_HOME="$HOME/Envs"
+  export VIRTUALENVWRAPPER_PYTHON='/usr/local/bin/python3'
+  source '/usr/local/bin/virtualenvwrapper.sh'
 fi
 
-# NCL environment variables
-if [ -d ~/miniconda2/bin/ncl ]; then
-  export NCARG_ROOT=~/miniconda2/bin/ncl
-  export PATH=$NCARG_ROOT/bin:"$PATH"
+# Set NCL environment variables.
+if [[ -d /usr/local/bin/ncl ]]; then
+  export NCARG_ROOT='/usr/local/bin/ncl'
+  export PATH="$NCARG_ROOT/bin:$PATH"
 fi
 
+# Source secret environment variables.
+if [[ -f "$HOME/.secrets" ]]; then
+  source "$HOME/.secrets"
+fi
