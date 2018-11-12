@@ -37,14 +37,6 @@ if (( $+commands[lesspipe.sh] )); then
   export LESSOPEN='| /usr/bin/env lesspipe.sh %s 2>&-'
 fi
 
-# Configure virtualenvwrapper for Python.
-if [[ -f /usr/local/bin/virtualenvwrapper.sh ]]; then
-  export WORKON_HOME="$HOME/Envs"
-  export PROJECT_HOME="$HOME/Envs"
-  export VIRTUALENVWRAPPER_PYTHON='/usr/local/bin/python3'
-  source '/usr/local/bin/virtualenvwrapper.sh'
-fi
-
 # Set NCL environment variables.
 if [[ -d /usr/local/bin/ncl ]]; then
   export NCARG_ROOT='/usr/local/bin/ncl'
@@ -55,3 +47,6 @@ fi
 if [[ -f "$HOME/.secrets" ]]; then
   source "$HOME/.secrets"
 fi
+ 
+# Initialize pyenv
+eval "$(pyenv init -)"

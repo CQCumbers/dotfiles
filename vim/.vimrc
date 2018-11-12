@@ -17,7 +17,6 @@ syntax enable
 " filetype specific
 au BufRead,BufNewFile *.ncl set filetype=ncl
 au! Syntax newlang source $VIM/ncl.vim
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " ui options
 set number  " add line numbers
@@ -48,6 +47,7 @@ set expandtab  " convert to spaces
 " filetype specific
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
+autocmd Filetype cpp setlocal ts=2 sts=2 sw=2
 autocmd Filetype ncl setlocal commentstring=; %s
 
 " move vertically by visual line
