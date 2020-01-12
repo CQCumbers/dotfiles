@@ -8,7 +8,9 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
+Plug 'beyondmarc/hlsl.vim'
 Plug 'junegunn/goyo.vim', { 'for': 'markdown' }
+Plug 'lervag/vimtex'
 call plug#end()
 
 " syntax highlight

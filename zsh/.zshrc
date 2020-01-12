@@ -27,5 +27,8 @@ if [[ -d "$HOME/.dokku" ]]; then
   alias dokku='bash $HOME/.dokku/contrib/dokku_client.sh'
 fi
 
+disable r
+
 # Make zsh know about hosts already accessed by SSH.
 zstyle -e ':completion:*:(ssh|scp|sftp|rsh|rsync):hosts' hosts 'reply=(${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) /dev/null)"}%%[# ]*}//,/ })'
+export PATH="/usr/local/opt/llvm/bin:$PATH"
