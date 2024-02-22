@@ -8,8 +8,7 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-Plug 'beyondmarc/hlsl.vim'
-Plug 'junegunn/goyo.vim', { 'for': 'markdown' }
+Plug 'beyondmarc/glsl.vim'
 Plug 'lervag/vimtex'
 call plug#end()
 

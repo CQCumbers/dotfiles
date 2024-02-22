@@ -50,3 +50,7 @@ fi
  
 # Initialize pyenv
 eval "$(pyenv init -)"
+
+# Set zephyr variables
+export ZEPHYR_TOOLCHAIN_VARIANT='gnuarmemb'
+export GNUARMEMB_TOOLCHAIN_PATH='/usr/local'
